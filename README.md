@@ -1,3 +1,3 @@
 # sorting-visualizer
-This is a sorting visualizer
-You czn visit here https://sherwindavis.github.io/sorting-visualizer/
+This is a Sorting Visualizer.
+You can visit here https://sherwindavis.github.io/sorting-visualizer/
