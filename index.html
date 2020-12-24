@@ -13,38 +13,41 @@
 "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PHBhdGggZD0ibTM2MCAxMzZ2NjBjMCA4LjI4LTYuNzIgMTUtMTUgMTVzLTE1LTYuNzItMTUtMTV2LTYwYzAtOC4yOCA2LjcyLTE1IDE1LTE1czE1IDYuNzIgMTUgMTV6IiBmaWxsPSIjZmFiZTJjIi8+PC9nPjxnPjxwYXRoIGQ9Im00MjAgMTA2djkwYzAgOC4yOC02LjcyIDE1LTE1IDE1cy0xNS02LjcyLTE1LTE1di05MGMwLTguMjggNi43Mi0xNSAxNS0xNXMxNSA2LjcyIDE1IDE1eiIgZmlsbD0iIzZhYTlmZiIvPjwvZz48Zz48cGF0aCBkPSJtNDgwIDc2djEyMGMwIDguMjgtNi43MiAxNS0xNSAxNXMtMTUtNi43Mi0xNS0xNXYtMTIwYzAtOC4yOCA2LjcyLTE1IDE1LTE1czE1IDYuNzIgMTUgMTV6IiBmaWxsPSIjZmY0MzViIi8+PC9nPjxwYXRoIGQ9Im0yNzAgNDZ2MTk1bC0xMjctOC05Ni4yLTYyLjQ4YzM0LjQ0LTg0LjA1IDExNi4yNy0xMzkuNTIgMjA4LjItMTM5LjUyIDguMjggMCAxNSA2LjcyIDE1IDE1eiIgZmlsbD0iI2ZlZDg0MyIvPjxwYXRoIGQ9Im00ODAgMjU2YzAgMTE5LjMzLTkyLjY2IDIxNi44LTIxMCAyMjQuNS00Ljk2LjMzLTkuOTYuNS0xNSAuNS0zNy40OSAwLTc0LjEzLTkuMjctMTA2LjgyLTI2LjkzbDI5LjktMTIyLjA3IDkxLjkyLTkxaDE5NWM4LjI4IDAgMTUgNi43MiAxNSAxNXoiIGZpbGw9IiNmZjdiNGEiLz48cGF0aCBkPSJtNDgwIDI1NmMwIDExOS4zMy05Mi42NiAyMTYuOC0yMTAgMjI0LjV2LTIzOS41aDE5NWM4LjI4IDAgMTUgNi43MiAxNSAxNXoiIGZpbGw9IiNmZjQzNWIiLz48cGF0aCBkPSJtMjcwIDI0MWMtMTAuMTU2IDE3Ljc2NC0xMjMuODc1IDIxNi42NjEtMTI5LjUgMjI2LjUtNC40IDcuMDQtMTMuNjcgOS4xNS0yMC42OCA0Ljc2LTcyLjgtNDUuNi0xMTkuODItMTI2LjE1LTExOS44Mi0yMTYuMjYgMC0yNy41OCA0LjM4LTU0LjcyIDEzLjAyLTgwLjY2IDIuNjItNy44NSAxMS4xMi0xMi4xMSAxOC45OC05LjQ5LjE2MS4wNTEgMjM1Ljg3NSA3NC40NzkgMjM4IDc1LjE1eiIgZmlsbD0iIzdlZDhmNiIvPjxnPjxwYXRoIGQ9Im01MTIgMTk2YzAgOC4yOC02LjcyIDE1LTE1IDE1aC0xODJjLTguMjggMC0xNS02LjcyLTE1LTE1czYuNzItMTUgMTUtMTVoMTgyYzguMjggMCAxNSA2LjcyIDE1IDE1eiIgZmlsbD0iIzYxNzI5YiIvPjwvZz48L2c+PC9zdmc+" 
         type = "image/x-icon">        
   </head>
-  <body>
+  <body style="background-color: #cfd8dc;">
     <script src="sketch.js"></script>
     <link rel="stylesheet" type="text/css" href="bg.css">
     <script src="Array.js"></script>
           
     
-    <div class="card" style="height :25rem; width: 20rem; float:left; margin-top :50px;margin-left: 50px;">
+    <div class="card" style="height :21rem; width: 20rem; float:left; margin-top :50px;margin-left: 50px;">
       <div class="card-body">
         <h5 class="card-title">Dashboard</h5>
         <h6 class="card-subtitle mb-2 text-muted">Algorithms</h6>
         <p class="card-text">Choose the algorithm and array size.</p>
         <form>
-          <label for="barnos" class="form-label">Array Range</label>
-          <input type="range" id="barnos" value="35" min="25" max="70" oninput="init()">
+          <label for="barnos" class="form-label" >Array Range</label>
+          <input type="range" id="barnos" value="35" min="25" max="60" oninput="init()">
           </div>
-        </form>        
+        </form>      
+        <button type="button" width="10px" class="btn btn-outline-primary btn-sm">Quick Sort</button>
+        <button type="button" class="btn btn-outline-primary btn-sm">Merge Sort</button>
+        <button type="button" class="btn btn-outline-primary btn-sm">Bubble Sort</button>  
       </div>
       </div>
         <style type="text/css">
         canvas{
+    background-color: white;
     margin-top: 50px;
     margin-left: 3.125rem;
-    border: 0.1rem solid whitesmoke;
+    border: 0.1rem solid white;
     height: 25rem;
-    width: 60%;
+    width: 80rem;
         }
         </style>
         <canvas width="800px" height="600px">
 
         </canvas>
         
-        <link rel="stylesheet" type="text/css" href="bars.css">
         
     </div>
     </div>
