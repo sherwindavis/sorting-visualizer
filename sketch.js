@@ -74,4 +74,50 @@ function bubblesort(arr2){
         draw(arr);       
 }
 }
+
+function quicksort(arr2) {
+	if (arr2.length <= 1) { 
+		return arr2;
+	} else {
+
+		var left = [];
+		var right = [];
+		var newArray = [];
+		var pivot = arr2.pop();
+		var length = arr2.length;
+
+		for (var i = 0; i < length; i++) {
+			if (arr2[i] <= pivot) {
+				left.push(arr2[i]);
+			} else {
+				right.push(arr2[i]);
+			}
+		}
+
+		arr= newArray.concat(quicksort(left), pivot, quicksort(right));
+        draw(arr);     
+    }
     
+}
+
+function mergeSort(arr2) {
+    const half = arr2.length / 2
+    if(arr2.length < 2){
+      return arr 
+    }    
+    const left = arr2.splice(0, half)
+    return merge(mergeSort(left),mergeSort(arr2))
+  }
+
+
+  function merge(left, right) {
+    let arr = []
+     while (left.length && right.length) {        
+        if (left[0] < right[0]) {
+            arr.push(left.shift())  
+        } else {
+            arr.push(right.shift()) 
+        }
+    }
+    draw(arr2);
+}
