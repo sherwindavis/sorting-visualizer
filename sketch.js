@@ -49,12 +49,12 @@ c.scale(scale, scale)
 for(i=0;i<no;i++)
 {
 gap=gap+10
-c.fillStyle= '#7C4DFF';
-c.strokeStyle='#ffffff';
+c.fillStyle= '#EAEAEA';
+c.strokeStyle='#EAEAEA';
 hght=arr[i];
 bott=400-hght
-c.fillRect(gap,bott,10,hght);
-c.strokeRect(gap,bott,10,hght);
+c.fillRect(gap,bott,8,hght);
+c.strokeRect(gap,bott,8,hght);
 
 }
 }
