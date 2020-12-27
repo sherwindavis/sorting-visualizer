@@ -23,7 +23,7 @@ draw(arr);
 
 function randarray()
 {
-    var no = document.getElementById("barnos").value
+    var no = document.getElementById("customRange3").value
     for(i=0;i<no;i++)
 {
 array[i]=Math.floor((Math.random() * 300) + 1);;
@@ -32,7 +32,7 @@ return array;
 }
 
 function draw(arr){
-var no = document.getElementById("barnos").value
+var no = document.getElementById("customRange3").value
 var canvas = document.querySelector("canvas");
 var c = canvas.getContext("2d");
 
