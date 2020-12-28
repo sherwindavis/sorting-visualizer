@@ -79,3 +79,64 @@ function bubblesort(arr2){
         draw(arr2);       
 }
 }
+
+function quicksortcall(arr)
+{
+    originalArr =[];
+    originalArr = arr2;
+    arr2= quickSort(originalArr);
+    draw(arr2);
+}
+
+
+function quickSort(originalArr) {
+    if (originalArr.length <= 1) {
+       return originalArr;
+       } else {
+             var leftArr = [];              
+             var rightArr = [];
+             var newArr = [];
+             var pivot = originalArr.pop();      
+             var length = originalArr.length;
+             for (var i = 0; i < length; i++) {
+                if (originalArr[i] <= pivot) {    
+                   leftArr.push(originalArr[i]);      
+             } else {
+                     rightArr.push(originalArr[i]);
+           }
+         }
+       return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
+    }
+ }
+
+
+ function mSort (arr) {
+    if (arr.length === 1) {
+    return arr                            // return once we hit an array with a single item
+ }
+ const middle = Math.floor(arr.length / 2) // get the middle item of the array rounded down
+ const left = arr.slice(0, middle)         // items on the left side
+ const right = arr.slice(middle)           // items on the right side
+ //document.write(middle);
+ return merge(mSort(left),mSort(right)
+ )
+ }
+
+ function merge (left, right) {
+    let result = []
+    let leftIndex = 0
+    let rightIndex = 0
+    while (leftIndex < left.length && rightIndex < right.length) {
+       if (left[leftIndex] < right[rightIndex]) {
+       result.push(left[leftIndex])
+       leftIndex++
+      // document.write("</br>");        
+       } else {
+       result.push(right[rightIndex])
+       rightIndex++      
+    }
+ }
+ arr  = result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
+ draw(arr);
+ return arr;
+}

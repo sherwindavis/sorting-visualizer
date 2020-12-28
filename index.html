@@ -36,14 +36,14 @@
     <div class="card" style="height :24rem; width: 20rem; float:left; margin-top :50px;margin-left: 50px;background-color: #EAEAEA;">
       <div class="card-body">
         <h5 class="card-title">Dashboard</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Algorithms</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Sorting Algorithms</h6>
         <p class="card-text">Choose the algorithm and array size.</p>
         <form>
           <label for="customRange3" class="form-range" >Array Range</label>
-          <input class="form-range"type="range" id="customRange3" value="35" min="25" max="60" oninput="init()">
-          <button type="button" class="btn btn-primary btn-rounded" onclick="bubblesort(arr2)">Bubble Sort</button>
-        <button type="button" class="btn btn-info btn-rounded" onclick="bubblesort(arr2)" >Merge Sort</button>
-        <button type="button" class="btn btn-warning btn-rounded" onclick="bubblesort(arr2)">Quick Sort</button>
+          <input class="form-range"type="range" id="customRange3" value="35" min="25" max="64" oninput="init()">
+          <button type="button" class="btn btn-primary btn-rounded" onclick="bubblesort(arr)">Bubble Sort</button>
+        <button type="button" class="btn btn-info btn-rounded" onclick=" mSort(arr)" >Merge Sort</button>
+        <button type="button" class="btn btn-warning btn-rounded" onclick="quicksortcall(arr)">Quick Sort</button>
           </div>
         </form>      
         
