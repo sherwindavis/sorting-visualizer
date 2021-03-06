@@ -1,24 +1,20 @@
-array=[];
-var arr2;
-
-function init(){
-clear();
-var canvas = document.querySelector("canvas");
+var array=[];
+var canvas = document.getElementById("canvas")
 var c = canvas.getContext("2d");
-var hsize = 400;
-var wsize = 650;
-canvas.style.width = wsize + "px";
-canvas.style.height = hsize + "px";
+var hsize = 400;//window.innerHeight;
+var wsize = 0.8*window.innerWidth;
+canvas.style.width = wsize+"px";
+canvas.style.height = hsize+"px";
 var scale = 2; 
 canvas.width = Math.floor(wsize * scale);
 canvas.height = Math.floor(hsize * scale);
-c.clearRect(0, 0, canvas.width, canvas.height);
-c.scale(scale, scale)
-var array=randarray();
-window.arr =array;
-window.arr2=array;
-draw(arr);
+c.scale(scale, scale);
 
+function init(){
+clearall();
+c.clearRect(0, 0, canvas.width, canvas.height);
+array=randarray();
+draw(array);
 }
 
 function randarray()
@@ -26,117 +22,137 @@ function randarray()
     var no = document.getElementById("customRange3").value
     for(i=0;i<no;i++)
 {
-array[i]=Math.floor((Math.random() * 300) + 1);;
+array[i]=Math.floor((Math.random()*300) + 1);
 }
 return array;
 }
 
-function draw(arr){
+function draw(array){
 var no = document.getElementById("customRange3").value
-var canvas = document.querySelector("canvas");
-var c = canvas.getContext("2d");
-
-var hsize = 400;
-var wsize = 650;
-canvas.style.width = wsize + "px";
-canvas.style.height = hsize + "px";
-var scale = 2; 
-canvas.width = Math.floor(wsize * scale);
-canvas.height = Math.floor(hsize * scale);
 var gap=0;
 c.clearRect(0, 0, canvas.width, canvas.height);
-c.scale(scale, scale)
 for(i=0;i<no;i++)
 {
-gap=gap+10
 c.fillStyle= '#EAEAEA';
 c.strokeStyle='#EAEAEA';
-hght=arr[i];
-bott=400-hght
-c.fillRect(gap,bott,8,hght);
-c.strokeRect(gap,bott,8,hght);
-
+hght=array[i];
+bott=hsize-hght;
+barwidth=8;
+c.fillRect(gap,bott,barwidth,hght);
+gap=gap+10;
 }
 }
 
-function clear(){
+async function visualize(first,second,color){   
+    hghtone=array[first];
+    bott=hsize-hghtone;
+    barwidth=8;
+    c.clearRect((first*10),0, barwidth, 800);
+    c.fillStyle= color;
+    c.strokeStyle=color;   
+    c.fillRect(first*10,bott,barwidth,hghtone);  
+
+    hghttwo=array[second];
+    bott=hsize-hghttwo;
+    c.clearRect((second*10),0, barwidth, 800);
+    c.fillStyle= color;
+    c.strokeStyle=color;   
+    c.fillRect(second*10,bott,barwidth,hghttwo);     
+
+}
+
+function clearall(){
     array.length = 0;
 }
 
-function bubblesort(arr2){
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  
+  async function swapp(array, first_Index, second_Index){
+    var temp = array[first_Index];
+    array[first_Index] = array[second_Index];
+    array[second_Index] = temp;
+  }
+
+ async function bubblesort(array){
        var i, j, stop;
-       var len = arr2.length;
+       var len = array.length;
     for (i=0; i < len; i++){
         
-        for (j=0, stop=len-i; j < stop; j++){
-            if (arr2[j] > arr2[j+1]){
-                var temp = arr2[j];
-                arr2[j] = arr2[j+1];
-                arr2[j+1] = temp;
-                
+        for (let j=0, stop=len-i; j < stop; j++){
+            if (array[j] > array[j+1]){                     
+            await swapp(array,j,j+1);   
+            visualize(j,j+1,"#FD6585");
+            await sleep(100);
+            visualize(j,j+1,"#EAEAEA");
+
             }
+            
         }
-        draw(arr2);       
+      
 }
 }
 
-function quicksortcall(arr)
-{
-    originalArr =[];
-    originalArr = arr2;
-    arr2= quickSort(originalArr);
-    draw(arr2);
-}
+  
+
+// function quicksortcall(arr2)
+// {
+//     originalArr =[];
+//     originalArr = arr2;
+//     arr2= quickSort(originalArr);
+//     draw(arr2);
+// }
 
 
-function quickSort(originalArr) {
-    if (originalArr.length <= 1) {
-       return originalArr;
-       } else {
-             var leftArr = [];              
-             var rightArr = [];
-             var newArr = [];
-             var pivot = originalArr.pop();      
-             var length = originalArr.length;
-             for (var i = 0; i < length; i++) {
-                if (originalArr[i] <= pivot) {    
-                   leftArr.push(originalArr[i]);      
-             } else {
-                     rightArr.push(originalArr[i]);
-           }
-         }
-       return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
-    }
- }
+// function quickSort(originalArr) {
+//     if (originalArr.length <= 1) {
+//        return originalArr;
+//        } else {
+//              var leftArr = [];              
+//              var rightArr = [];
+//              var newArr = [];
+//              var pivot = originalArr.pop();      
+//              var length = originalArr.length;
+//              for (var i = 0; i < length; i++) {
+//                 if (originalArr[i] <= pivot) {    
+//                    leftArr.push(originalArr[i]);      
+//              } else {
+//                      rightArr.push(originalArr[i]);
+//            }
+//          }
+//        return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
+//     }
+//  }
 
 
- function mSort (arr) {
-    if (arr.length === 1) {
-    return arr                            // return once we hit an array with a single item
- }
- const middle = Math.floor(arr.length / 2) // get the middle item of the array rounded down
- const left = arr.slice(0, middle)         // items on the left side
- const right = arr.slice(middle)           // items on the right side
- //document.write(middle);
- return merge(mSort(left),mSort(right)
- )
- }
 
- function merge (left, right) {
-    let result = []
-    let leftIndex = 0
-    let rightIndex = 0
-    while (leftIndex < left.length && rightIndex < right.length) {
-       if (left[leftIndex] < right[rightIndex]) {
-       result.push(left[leftIndex])
-       leftIndex++
-      // document.write("</br>");        
-       } else {
-       result.push(right[rightIndex])
-       rightIndex++      
-    }
- }
- arr  = result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
- draw(arr);
- return arr;
-}
+//  function mSort (arr) {
+//     if (arr.length === 1) {
+//     return arr                            
+//  }
+//  const middle = Math.floor(arr.length / 2)
+//  const left = arr.slice(0, middle)
+//  const right = arr.slice(middle)
+//  return merge(mSort(left),mSort(right)
+//  )
+//  }
+
+//  function merge (left, right) {
+//     let result = []
+//     let leftIndex = 0
+//     let rightIndex = 0
+//     while (leftIndex < left.length && rightIndex < right.length) {
+//        if (left[leftIndex] < right[rightIndex]) {
+//        result.push(left[leftIndex])
+//        leftIndex++      
+//        } else {
+//        result.push(right[rightIndex])
+//        rightIndex++      
+//     }
+//  }
+//  arr  = result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
+//  draw(arr);
+//  return arr;
+// }

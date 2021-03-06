@@ -1,79 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Sorting Visualizer</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PHBhdGggZD0ibTM2MCAxMzZ2NjBjMCA4LjI4LTYuNzIgMTUtMTUgMTVzLTE1LTYuNzItMTUtMTV2LTYwYzAtOC4yOCA2LjcyLTE1IDE1LTE1czE1IDYuNzIgMTUgMTV6IiBmaWxsPSIjZmFiZTJjIi8+PC9nPjxnPjxwYXRoIGQ9Im00MjAgMTA2djkwYzAgOC4yOC02LjcyIDE1LTE1IDE1cy0xNS02LjcyLTE1LTE1di05MGMwLTguMjggNi43Mi0xNSAxNS0xNXMxNSA2LjcyIDE1IDE1eiIgZmlsbD0iIzZhYTlmZiIvPjwvZz48Zz48cGF0aCBkPSJtNDgwIDc2djEyMGMwIDguMjgtNi43MiAxNS0xNSAxNXMtMTUtNi43Mi0xNS0xNXYtMTIwYzAtOC4yOCA2LjcyLTE1IDE1LTE1czE1IDYuNzIgMTUgMTV6IiBmaWxsPSIjZmY0MzViIi8+PC9nPjxwYXRoIGQ9Im0yNzAgNDZ2MTk1bC0xMjctOC05Ni4yLTYyLjQ4YzM0LjQ0LTg0LjA1IDExNi4yNy0xMzkuNTIgMjA4LjItMTM5LjUyIDguMjggMCAxNSA2LjcyIDE1IDE1eiIgZmlsbD0iI2ZlZDg0MyIvPjxwYXRoIGQ9Im00ODAgMjU2YzAgMTE5LjMzLTkyLjY2IDIxNi44LTIxMCAyMjQuNS00Ljk2LjMzLTkuOTYuNS0xNSAuNS0zNy40OSAwLTc0LjEzLTkuMjctMTA2LjgyLTI2LjkzbDI5LjktMTIyLjA3IDkxLjkyLTkxaDE5NWM4LjI4IDAgMTUgNi43MiAxNSAxNXoiIGZpbGw9IiNmZjdiNGEiLz48cGF0aCBkPSJtNDgwIDI1NmMwIDExOS4zMy05Mi42NiAyMTYuOC0yMTAgMjI0LjV2LTIzOS41aDE5NWM4LjI4IDAgMTUgNi43MiAxNSAxNXoiIGZpbGw9IiNmZjQzNWIiLz48cGF0aCBkPSJtMjcwIDI0MWMtMTAuMTU2IDE3Ljc2NC0xMjMuODc1IDIxNi42NjEtMTI5LjUgMjI2LjUtNC40IDcuMDQtMTMuNjcgOS4xNS0yMC42OCA0Ljc2LTcyLjgtNDUuNi0xMTkuODItMTI2LjE1LTExOS44Mi0yMTYuMjYgMC0yNy41OCA0LjM4LTU0LjcyIDEzLjAyLTgwLjY2IDIuNjItNy44NSAxMS4xMi0xMi4xMSAxOC45OC05LjQ5LjE2MS4wNTEgMjM1Ljg3NSA3NC40NzkgMjM4IDc1LjE1eiIgZmlsbD0iIzdlZDhmNiIvPjxnPjxwYXRoIGQ9Im01MTIgMTk2YzAgOC4yOC02LjcyIDE1LTE1IDE1aC0xODJjLTguMjggMC0xNS02LjcyLTE1LTE1czYuNzItMTUgMTUtMTVoMTgyYzguMjggMCAxNSA2LjcyIDE1IDE1eiIgZmlsbD0iIzYxNzI5YiIvPjwvZz48L2c+PC9zdmc+" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts Roboto -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <!-- Custom styles -->
-    <style>
-      body{
-        background-color: #f6e0a2;
-      }
-      .icon-color {
-        background-color:#94536d !important;
-      }
-    </style>
-  </head>
-    <!-- Start your project here-->
-    
 
-<body style="background-color: #D1C4E9;">
-    <script src="sketch.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">          
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>ViSA</title>
+  </head>
+  <body>
     
-    <div class="card" style="height :24rem; width: 20rem; float:left; margin-top :50px;margin-left: 50px;background-color: #EAEAEA;">
+    <link rel="stylesheet" type="text/css" href="style.css">  
+    <canvas id ="canvas"></canvas>        
+    
+    <div class="card">
       <div class="card-body">
         <h5 class="card-title">Dashboard</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Sorting Algorithms</h6>
+        <h6 class="card-subtitle mb-2">Sorting Algorithms</h6>
         <p class="card-text">Choose the algorithm and array size.</p>
         <form>
-          <label for="customRange3" class="form-range" >Array Range</label>
-          <input class="form-range"type="range" id="customRange3" value="35" min="25" max="64" oninput="init()">
-          <button type="button" class="btn btn-primary btn-rounded" onclick="bubblesort(arr)">Bubble Sort</button>
-        <button type="button" class="btn btn-info btn-rounded" onclick=" mSort(arr)" >Merge Sort</button>
-        <button type="button" class="btn btn-warning btn-rounded" onclick="quicksortcall(arr)">Quick Sort</button>
+          <label for="customRange1" class="form-range" >Array Range</label>
+          <input class="form-range"type="range" id="customRange3" value="35" min="25" max="110" oninput="init()">
+          <button type="button" class="btn btn-outline-light" onclick="bubblesort(array)">Bubble Sort</button>
+        <button type="button" class="btn btn-outline-light" onclick=" mSort(array)" >Merge Sort</button>
+        <button type="button" class="btn btn-outline-light" onclick="quicksortcall(array)">Quick Sort</button>
           </div>
-        </form>      
-        
+        </form>        
       </div>
       </div>
-        <style type="text/css">
-        canvas{
-    background-color: #D1C4E9;
-    margin-top: 50px;
-    margin-left: 3.125rem;
-    margin-right: 3.125rem;
-    border: 0.1rem solid white;    
-        }
-        </style>
-        <canvas width="800px" height="400px">
-
-        </canvas>
-        
-        
+      </div>
     </div>
-    </div>
-</body>
-    <!-- End your project here-->
-  
 
-  <!-- MDB -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-    
-  </style>
-  <!-- Custom scripts -->
-  <script type="text/javascript"></script>
 
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+  </body>
 </html>
