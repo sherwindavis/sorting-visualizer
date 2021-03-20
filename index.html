@@ -17,17 +17,18 @@
   </head>
   <body>
     
-    <link rel="stylesheet" type="text/css" href="style.css">  
+    <link rel="stylesheet" type="text/css" href="stylev2.css">  
     <canvas id ="canvas"></canvas>        
     
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Dashboard</h5>
-        <h6 class="card-subtitle mb-2">Sorting Algorithms</h6>
         <p class="card-text">Choose the algorithm and array size.</p>
         <form>
           <label for="customRange1" class="form-range" >Array Range</label>
-          <input class="form-range"type="range" id="customRange3" value="35" min="25" max="110" oninput="init()">
+          <input class="form-range"type="range" id="customRange3" value="35" min="25" max="100" oninput="init()">
+          <label for="customRange1" class="form-range" >Speed</label>
+          <input class="form-range"type="range" id="customRange2" value="150" min="0" max="300" oninput="speed()">
           <button type="button" class="btn btn-outline-light" onclick="bubblesort(array)">Bubble Sort</button>
         <button type="button" class="btn btn-outline-light" onclick=" mSort(array)" >Merge Sort</button>
         <button type="button" class="btn btn-outline-light" onclick="quicksortcall(array)">Quick Sort</button>

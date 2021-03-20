@@ -1,8 +1,10 @@
 var array=[];
+var wsize = Math.floor(0.8*window.innerWidth);
+var hsize = 400;
+var barcord= Math.floor(wsize/100);
+var ms=document.getElementById("customRange2").value;
 var canvas = document.getElementById("canvas")
 var c = canvas.getContext("2d");
-var hsize = 400;//window.innerHeight;
-var wsize = 0.8*window.innerWidth;
 canvas.style.width = wsize+"px";
 canvas.style.height = hsize+"px";
 var scale = 2; 
@@ -37,34 +39,40 @@ c.fillStyle= '#EAEAEA';
 c.strokeStyle='#EAEAEA';
 hght=array[i];
 bott=hsize-hght;
-barwidth=8;
+barwidth=(barcord)-2;
 c.fillRect(gap,bott,barwidth,hght);
-gap=gap+10;
+gap=gap+(barcord);
+
 }
 }
 
-async function visualize(first,second,color){   
+function visualize(first,second,color){   
+
     hghtone=array[first];
     bott=hsize-hghtone;
-    barwidth=8;
-    c.clearRect((first*10),0, barwidth, 800);
+    barwidth=barcord-2;
+    c.clearRect(first*barcord,0, barwidth+2, 800);
     c.fillStyle= color;
     c.strokeStyle=color;   
-    c.fillRect(first*10,bott,barwidth,hghtone);  
+    c.fillRect(first*barcord,bott,barwidth,hghtone);
 
     hghttwo=array[second];
     bott=hsize-hghttwo;
-    c.clearRect((second*10),0, barwidth, 800);
+    c.clearRect(second*barcord,0, barwidth+2, 800);
     c.fillStyle= color;
     c.strokeStyle=color;   
-    c.fillRect(second*10,bott,barwidth,hghttwo);     
+    c.fillRect(second*barcord,bott,barwidth,hghttwo);
+    
 
 }
 
 function clearall(){
     array.length = 0;
 }
+function speed(){
+     ms = document.getElementById("customRange2").value
 
+}
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -85,11 +93,14 @@ function sleep(ms) {
             if (array[j] > array[j+1]){                     
             await swapp(array,j,j+1);   
             visualize(j,j+1,"#FD6585");
-            await sleep(100);
+            await sleep(ms);
             visualize(j,j+1,"#EAEAEA");
 
             }
-            
+            visualize(j,j+1,"#FD6585");
+            await sleep(ms);
+            visualize(j,j+1,"#EAEAEA");
+
         }
       
 }

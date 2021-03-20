@@ -1,0 +1,28 @@
+body{
+    background-image: linear-gradient(to right,#FFD3A5,#FD6585);
+}
+canvas{
+    background-color: #ffffff00;    
+    margin-left: 10vw;
+    border: 1px solid white;
+    
+        }
+
+.card{
+    height :25vh; 
+    width: 80vw; 
+    float:left;
+    margin-top :0%;
+    margin-left: 10vw;
+    background-color: rgba(255, 255, 255, 0);
+    color:white;
+    border-radius: 10px;
+    }
+.card-body{
+    background-image: linear-gradient(to right,#FD6585,#FFD3A5);
+    color:white;
+    border-radius: 10px;
+}
+#customRange2{
+    direction: rtl;
+}
