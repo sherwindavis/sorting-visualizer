@@ -35,7 +35,7 @@ var gap=0;
 c.clearRect(0, 0, canvas.width, canvas.height);
 for(i=0;i<no;i++)
 {
-c.fillStyle= '#EAEAEA';
+c.fillStyle= '#EAEAEA'
 c.strokeStyle='#EAEAEA';
 hght=array[i];
 bott=hsize-hght;
@@ -92,14 +92,19 @@ function sleep(ms) {
         for (let j=0, stop=len-i; j < stop; j++){
             if (array[j] > array[j+1]){                     
             await swapp(array,j,j+1);   
-            visualize(j,j+1,"#FD6585");
+            visualize(j,j+1,"#25d78d");
             await sleep(ms);
             visualize(j,j+1,"#EAEAEA");
-
             }
-            visualize(j,j+1,"#FD6585");
-            await sleep(ms);
-            visualize(j,j+1,"#EAEAEA");
+
+            else {
+                visualize(j,j+1,"#ff2934");
+                await sleep(ms);
+                visualize(j,j+1,"#EAEAEA");
+            }
+
+            
+            
 
         }
       
@@ -108,34 +113,34 @@ function sleep(ms) {
 
   
 
-// function quicksortcall(arr2)
-// {
-//     originalArr =[];
-//     originalArr = arr2;
-//     arr2= quickSort(originalArr);
-//     draw(arr2);
-// }
-
-
-// function quickSort(originalArr) {
-//     if (originalArr.length <= 1) {
-//        return originalArr;
-//        } else {
-//              var leftArr = [];              
-//              var rightArr = [];
-//              var newArr = [];
-//              var pivot = originalArr.pop();      
-//              var length = originalArr.length;
-//              for (var i = 0; i < length; i++) {
-//                 if (originalArr[i] <= pivot) {    
-//                    leftArr.push(originalArr[i]);      
-//              } else {
-//                      rightArr.push(originalArr[i]);
-//            }
-//          }
-//        return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
-//     }
-//  }
+ async function quicksortcall(arr2)
+ {
+     originalArr =[];
+     originalArr = arr2;
+     arr2= quickSort(originalArr);
+     console.log(originalArr)
+     
+ }
+ 
+ async function quickSort(originalArr) {
+     if (originalArr.length <= 1) {
+        return originalArr;
+        } else {
+              var leftArr = [];              
+              var rightArr = [];
+              var newArr = [];
+              var pivot = originalArr.pop();      
+              var length = originalArr.length;
+              for (var i = 0; i < length; i++) {
+                 if (originalArr[i] <= pivot) {    
+                    leftArr.push(originalArr[i]);      
+              } else {
+                      rightArr.push(originalArr[i]);
+            }
+          }
+        return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
+     }
+    }
 
 
 
@@ -166,4 +171,4 @@ function sleep(ms) {
 //  arr  = result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
 //  draw(arr);
 //  return arr;
-// }
+ //}

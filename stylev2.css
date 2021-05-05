@@ -1,5 +1,5 @@
 body{
-    background-image: linear-gradient(to right,#FFD3A5,#FD6585);
+    background-image: linear-gradient(to right,#25a7d7, #2962FF);
 }
 canvas{
     background-color: #ffffff00;    
@@ -19,9 +19,10 @@ canvas{
     border-radius: 10px;
     }
 .card-body{
-    background-image: linear-gradient(to right,#FD6585,#FFD3A5);
+    background-image: linear-gradient(to right#4025d7, #2962FF);
     color:white;
     border-radius: 10px;
+    border: 1px solid white;
 }
 #customRange2{
     direction: rtl;
