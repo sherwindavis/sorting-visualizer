@@ -1,6 +1,6 @@
 var array=[];
-var wsize = Math.floor(0.8*window.innerWidth);
-var hsize = 400;
+var wsize = Math.floor(0.9*window.innerWidth);
+var hsize = Math.floor(0.6*window.innerHeight);
 var barcord= Math.floor(wsize/100);
 var ms=document.getElementById("customRange2").value;
 var canvas = document.getElementById("canvas")
@@ -85,29 +85,28 @@ function sleep(ms) {
   }
 
  async function bubblesort(array){
-       var i, j, stop;
+       var i,j, stop;
        var len = array.length;
     for (i=0; i < len; i++){
         
-        for (let j=0, stop=len-i; j < stop; j++){
+        for (var j=0, stop=len-i; j < stop; j++){
             if (array[j] > array[j+1]){                     
             await swapp(array,j,j+1);   
-            visualize(j,j+1,"#25d78d");
+            visualize(j,j+1,"#ffc226");
             await sleep(ms);
             visualize(j,j+1,"#EAEAEA");
             }
-
             else {
                 visualize(j,j+1,"#ff2934");
                 await sleep(ms);
                 visualize(j,j+1,"#EAEAEA");
-            }
-
+            }          
             
-            
-
         }
-      
+        
+        visualize(j,j,"#25d78d");
+        visualize(j-1,j-1,"#25d78d");
+        console.log(j-1);
 }
 }
 
@@ -140,6 +139,39 @@ function sleep(ms) {
           }
         return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
      }
+    }
+
+    async function selectionsort(array) { 
+        let n = array.length;
+            
+        for(let i = 0; i < n; i++) {
+
+            let min = i;
+            for(var j = i+1; j < n; j++){
+                if(array[j] < array[min]) {
+                    min=j;
+                    visualize(j,min,"#ff2934");
+                    await sleep(ms);
+                    visualize(j,min,"#EAEAEA"); 
+                }
+                else{
+                    visualize(j,min,"#ff2934");
+                    await sleep(ms);
+                    visualize(j,min,"#EAEAEA");
+                }
+             }
+             if (min != i) {
+                 await swapp(array, i, min)
+                 visualize(i,min,"#ffc226");
+                 await sleep(ms);
+                 visualize(i,min,"#EAEAEA");
+                       
+            }
+            visualize(i-1,i-1,"#25d78d");
+            visualize(i,i,"#25d78d");
+        }
+        console.log(array);
+        return array;
     }
 
 
