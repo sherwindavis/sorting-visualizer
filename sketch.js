@@ -61,8 +61,7 @@ function visualize(first,second,color){
     c.clearRect(second*barcord,0, barwidth+2, 800);
     c.fillStyle= color;
     c.strokeStyle=color;   
-    c.fillRect(second*barcord,bott,barwidth,hghttwo);
-    
+    c.fillRect(second*barcord,bott,barwidth,hghttwo);    
 
 }
 
@@ -106,8 +105,9 @@ function sleep(ms) {
         
         visualize(j,j,"#25d78d");
         visualize(j-1,j-1,"#25d78d");
-        console.log(j-1);
+        console.log(array[j]);
 }
+console.log(array);
 }
 
   
@@ -121,25 +121,25 @@ function sleep(ms) {
      
  }
  
- async function quickSort(originalArr) {
-     if (originalArr.length <= 1) {
-        return originalArr;
-        } else {
-              var leftArr = [];              
-              var rightArr = [];
-              var newArr = [];
-              var pivot = originalArr.pop();      
-              var length = originalArr.length;
-              for (var i = 0; i < length; i++) {
-                 if (originalArr[i] <= pivot) {    
-                    leftArr.push(originalArr[i]);      
-              } else {
-                      rightArr.push(originalArr[i]);
-            }
-          }
-        return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
-     }
-    }
+//  async function quickSort(originalArr) {
+//      if (originalArr.length <= 1) {
+//         return originalArr;
+//         } else {
+//               var leftArr = [];              
+//               var rightArr = [];
+//               var newArr = [];
+//               var pivot = originalArr.pop();      
+//               var length = originalArr.length;
+//               for (var i = 0; i < length; i++) {
+//                  if (originalArr[i] <= pivot) {    
+//                     leftArr.push(originalArr[i]);      
+//               } else {
+//                       rightArr.push(originalArr[i]);
+//             }
+//           }
+//         return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr));                                                                            //returned untill sorting occurs
+//      }
+//     }
 
     async function selectionsort(array) { 
         let n = array.length;
@@ -175,32 +175,22 @@ function sleep(ms) {
     }
 
 
-
-//  function mSort (arr) {
-//     if (arr.length === 1) {
-//     return arr                            
-//  }
-//  const middle = Math.floor(arr.length / 2)
-//  const left = arr.slice(0, middle)
-//  const right = arr.slice(middle)
-//  return merge(mSort(left),mSort(right)
-//  )
-//  }
-
-//  function merge (left, right) {
-//     let result = []
-//     let leftIndex = 0
-//     let rightIndex = 0
-//     while (leftIndex < left.length && rightIndex < right.length) {
-//        if (left[leftIndex] < right[rightIndex]) {
-//        result.push(left[leftIndex])
-//        leftIndex++      
-//        } else {
-//        result.push(right[rightIndex])
-//        rightIndex++      
-//     }
-//  }
-//  arr  = result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
-//  draw(arr);
-//  return arr;
- //}
+ async function insertionSort(array) {
+     let n = array.length;
+         for (var i = 1; i < n; i++) {
+             var current = array[i];
+             var j = i-1; 
+             while ((j > -1) && (current < array[j])) {
+                array[j+1] = array[j]; 
+                 visualize(j+1,j+1,"#ffc226");
+                 await sleep(ms);
+                 visualize(j+1,j+1,"#25d78d");                 
+                 j--;
+             }
+             array[j+1] = current;
+             visualize(j+1,j+1,"#42daf5");
+             await sleep(ms);
+             visualize(j+1,j+1,"#25d78d");
+         }
+     return console.log(array);
+}
