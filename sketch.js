@@ -12,6 +12,41 @@ canvas.width = Math.floor(wsize * scale);
 canvas.height = Math.floor(hsize * scale);
 c.scale(scale, scale);
 
+
+function darkmode(){
+    var mode= document.getElementById("flexSwitchCheckDefault");
+    var card= document.getElementById("card")
+  var cardbody= document.getElementById("card-body")
+  var nav1= document.getElementById("nav1")
+  var navbarbrand = document.getElementById("navbarbrand")
+
+    switch (mode.value){
+        case"off":
+  
+  card.style.backgroundColor="#404040"
+  cardbody.style.backgroundColor="#404040"
+  cardbody.style.color="white";  
+  nav1.style.backgroundColor="#404040"
+  nav1.style.color="white"  
+  navbarbrand.style.color = "white";
+  document.body.style.backgroundImage = "linear-gradient(to right,#121212,#121212)";
+  mode.value="on";
+  break;
+
+        case"on":     
+        card.style.backgroundColor="white"
+        cardbody.style.backgroundColor="white"
+        cardbody.style.color="black";        
+        nav1.style.backgroundColor="white"
+        nav1.style.color="black"       
+        navbarbrand.style.color = "black";
+        document.body.style.backgroundImage = "linear-gradient(to right,#25a7d7, #2962FF)";
+        mode.value="off"
+        break;
+
+    }
+}
+
 function init(){
 clearall();
 c.clearRect(0, 0, canvas.width, canvas.height);
