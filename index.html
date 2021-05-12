@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#2962FF" />
+    <meta name="theme-color" id="accent" content="#2962FF" />
     <!-- Google Fonts Roboto -->
     <link
       rel="stylesheet"
@@ -19,7 +19,7 @@
   </head>
   <body>
     
-    <link rel="stylesheet" type="text/css" href="stylev7.css">
+    <link rel="stylesheet" type="text/css" href="stylev8.css">
   
     
     <nav class="navbar navbar-expand-lg navbar-light ml-auto" id="nav1" style="background-color: #ffffff;">
@@ -54,14 +54,10 @@
                 <button type="button" class="btn btn-outline-primary" onclick="selectionsort(array)">Selection Sort</button>
                 <button type="button" class="btn btn-outline-primary" onclick="insertionSort(array)">Insertion Sort</button>
               </div>
-            </li>
-            <div class="d-flex justify-content-end">
-              <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                  <a href="https://github.com/sherwindavis/sorting-visualizer"><button type="button" class="btn btn-light" id="gitlink"><i class="bi bi-github"></i></button> </a></ul>
+            </li>       
+                  <li class="nav-item"id="git">
+                  <a href="https://github.com/sherwindavis/sorting-visualizer"><button type="button" class="btn" id="gitlink"><i class="bi bi-github" id="gitlogo"></i></button> </a></ul>
                   </li>
-              </ul>
-          </div>
               </ul>
             </li>
           </ul>
@@ -82,15 +78,23 @@
         <span class="badge rounded-pill bg-warning text-dark">Swapping</span>
         <span class="badge rounded-pill bg-success">Sorted</span>
         <span class="badge rounded-pill bg-info text-dark">Correct Position Found</span>
-        <div class="form-check form-switch">
+        <div class="form-check form-switch" id="darkswitch">
           <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" value="off" onclick="darkmode();">
           <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
         </div>
-        <!-- <div class="progress">
-          <div class="progress-bar progress-bar-striped bg-info " role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-        </div> -->
       </div>
-    </div>
+      </div>
+
+      <div class="card" id="card2">
+        <div class="card-body" id="card-body2">
+          <h5 class="card-title"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </svg> </i>Current Array</h5>
+          </div>
+          <div>
+            <p class="card-text" id="arrinfo"></p>
+          </div>
+        </div>
 
 
     <!-- Bootstrap Bundle with Popper -->

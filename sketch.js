@@ -13,22 +13,38 @@ canvas.height = Math.floor(hsize * scale);
 c.scale(scale, scale);
 
 
+function arrinfo(){
+    arrinfotext=document.getElementById("arrinfo");
+    arrinfotext.innerHTML= "["+array+" ]";
+
+}
+
+
 function darkmode(){
     var mode= document.getElementById("flexSwitchCheckDefault");
     var card= document.getElementById("card")
   var cardbody= document.getElementById("card-body")
+  var card2= document.getElementById("card2")
+  var cardbody2= document.getElementById("card-body2")
   var nav1= document.getElementById("nav1")
+  var arrinfotxt= document.getElementById("arrinfo")
   var navbarbrand = document.getElementById("navbarbrand")
+  var gitlogo = document.getElementById("gitlogo")
 
     switch (mode.value){
         case"off":
   
   card.style.backgroundColor="#404040"
   cardbody.style.backgroundColor="#404040"
-  cardbody.style.color="white";  
+  cardbody.style.color="white";
+  arrinfotxt.style.color="white" 
+  card2.style.backgroundColor="#404040"
+  cardbody2.style.backgroundColor="#404040"
+  cardbody2.style.color="white";  
   nav1.style.backgroundColor="#404040"
   nav1.style.color="white"  
   navbarbrand.style.color = "white";
+  gitlogo.style.color = "white";
   document.body.style.backgroundImage = "linear-gradient(to right,#121212,#121212)";
   mode.value="on";
   break;
@@ -36,10 +52,15 @@ function darkmode(){
         case"on":     
         card.style.backgroundColor="white"
         cardbody.style.backgroundColor="white"
-        cardbody.style.color="black";        
+        cardbody.style.color="black";
+        arrinfotxt.style.color="black" 
+        card2.style.backgroundColor="white"
+        cardbody2.style.backgroundColor="white"
+        cardbody2.style.color="black";        
         nav1.style.backgroundColor="white"
         nav1.style.color="black"       
         navbarbrand.style.color = "black";
+        gitlogo.style.color = "black";
         document.body.style.backgroundImage = "linear-gradient(to right,#25a7d7, #2962FF)";
         mode.value="off"
         break;
@@ -80,7 +101,7 @@ bott=hsize-hght;
 barwidth=(barcord)-2;
 c.fillRect(gap,bott,barwidth,hght);
 gap=gap+(barcord);
-
+arrinfo();
 }
 }
 
@@ -99,7 +120,9 @@ function visualize(first,second,color){
     c.clearRect(second*barcord,0, barwidth+2, 800);
     c.fillStyle= color;
     c.strokeStyle=color;   
-    c.fillRect(second*barcord,bott,barwidth,hghttwo);    
+    c.fillRect(second*barcord,bott,barwidth,hghttwo);
+    
+    arrinfo();
 
 }
 
