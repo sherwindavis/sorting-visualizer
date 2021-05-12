@@ -18,7 +18,10 @@ c.clearRect(0, 0, canvas.width, canvas.height);
 array=randarray();
 draw(array);
 }
-
+function updateTextInput() {
+    let count= document.getElementById('meter');
+    count.innerHTML=document.getElementById("customRange3").value;
+  }
 function randarray()
 {
     var no = document.getElementById("customRange3").value
@@ -69,8 +72,9 @@ function clearall(){
     array.length = 0;
 }
 function speed(){
-     ms = document.getElementById("customRange2").value
-
+     ms = document.getElementById("customRange2").value;
+     var speedcount=document.getElementById("speedmeter");
+    speedcount.innerHTML=Math.floor((100-(ms*100/300))) +"%";
 }
 
 function sleep(ms) {
