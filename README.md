@@ -13,7 +13,6 @@ This project is made to let students or the educators understand how these algor
 - Selection Sort
 - Insertion Sort
 - Quick Sort   
--    
 ## Upcoming Features
 - Color Themes
 - Pathfinding Algorithms
