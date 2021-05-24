@@ -17,7 +17,6 @@ This project is made to let students or the educators understand how these algor
 - Color Themes
 - Pathfinding Algorithms
 - More Sorting Algorithms
-- Mobile first design
 - Various other customizations
 - Custom Array input
 - UI Rework using ReactJS
