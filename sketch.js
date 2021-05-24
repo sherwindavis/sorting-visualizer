@@ -244,7 +244,7 @@ async function partition(array, left, right) {
         await sleep(ms);
     while (i <= j) {
         while (array[i] < pivot) {
-            i++;
+            i++;            
         }
         while (array[j] > pivot) {
             j--;

@@ -8,7 +8,7 @@ canvas{
     }
 .card{
     height :25vh; 
-    width: 470px; 
+    width: 350px; 
     float:left;
     margin-top :0%;
     margin-left: 5vw;
@@ -28,7 +28,7 @@ canvas{
     position: absolute;
     right:5vw;
     height :25vh; 
-    width: 460px; 
+    width: 350px; 
     margin-top :5px;
     margin-left: 5vw;
     background-color: white;
@@ -70,8 +70,8 @@ canvas{
     top:28%;
     left: 6%;
     height:19vh;
-    width: 420px;
-    font-size: 0.8rem;
+    width: 310px;
+    font-size: 0.7rem;
 }
 #darkswitch{
     position: absolute;
