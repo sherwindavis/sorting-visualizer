@@ -19,7 +19,6 @@ This project is made to let students or the educators understand how these algor
 - More Sorting Algorithms
 - Various other customizations
 - Custom Array input
-- UI Rework using ReactJS
 - Various bug fixes and optimizations.
    
 ***Glad to see you here! Show some love by [starring](https://github.com/sherwindavis/sorting-visualizer/) this repo.***   
